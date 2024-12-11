@@ -1,0 +1,33 @@
+**Challenge de Cryptographie:** Coppersmith (100pts)
+
+# 1st Solved by CyberAI
+
+![image](https://github.com/user-attachments/assets/b5f2fa5b-7aa3-4071-9d32-fca8a6b3459e)
+
+File content:
+
+• N (modulus) :
+14020139288458677100781860769392088236851349990900389433452447072019512309150009845
+49487266617395213964128457198844016411614088703433245235955699219750891298695508396
+76622290444908311664885251602296479281667512321171130176289107994602669926237464057
+657364163888576071061804283474057094281107358584567651488141
+
+• E (exponent) : 3
+
+• Ct (ciphertext) :
+13277257339848535711534984663741768662968940974505962514125444823176789878287955039
+49766948561675761382147858534258252208868069524167414559717611629100856058182521349
+57935063091531626224080770951923644157769533498576924229862619727018103651380603659
+469124975531175454397767683105543273944742797016857668909502
+
+# Solution
+
+A premier vue, nous avons **e** qui est trop petit. Le premier reflex est d'exploiter cette vuln mais ce n'était pas ça.
+
+En utilisant des outils automatisé comme [dcode.fr](https://www.dcode.fr/rsa-cipher) vous aurez l'erreur que le **N** est premier... Apres avoir google cette erreur, je comprends que c'était la porte d'entrée.
+Mais recherche me conduise à ce [script](https://github.com/parfaittolefo/SMARTEX_CTF_2024/blob/main/RSA_Prime_N_Exploit.py): 
+
+![image](https://github.com/user-attachments/assets/8fd648bf-c213-46ee-814f-f3448eb29f44)
+
+
+**FLAG:** SMARTEXCTF{C0pp3r5m17h_4tt4ck_1s_n3w_f0r_M3}
